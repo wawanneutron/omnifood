@@ -139,6 +139,72 @@
   .btn--form {
     margin-top: 1.2rem;
   }
+
+  /* TODO: MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* hide navigation */
+    /* Allows NO transition at all */
+    /* display: none; */
+
+    /* !gunakan dibawah ini jika menggunakan opacity, karena pada dasarnya opacity hanya menyembunyikan visual saja, tidak benar benar hilang */
+    /*  * 1) sembunyikan secara visual */
+    opacity: 0;
+
+    /*  * 2) Jadikan tidak dapat diakses oleh mouse dan keyboard */
+    pointer-events: none;
+
+    /*  * 3) Sembunyikan dari layar */
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    /* !ketika class .nav-open aktif maka kembalikan ke normal */
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    /* 
+    * memunculkan icon close ketika class .nav-open aktif
+    */
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    /* 
+    * menghilangkan icon menu ketika class .nav-open aktif
+    */
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
 }
 
 /* 
