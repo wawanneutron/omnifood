@@ -2,4 +2,4 @@
 
 ## Demo Live
 
-https://www.omnifood.dev/
+https://omnifood-neutron.netlify.app/
